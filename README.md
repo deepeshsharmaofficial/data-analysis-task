@@ -1,6 +1,6 @@
 # Frontend Data Analysis Task 
 
-[Visit Now]() 🚀
+[Visit Now](https://data-analysis-task.netlify.app/) 🚀
 
 ## 🖥️ Tech Stack
 
