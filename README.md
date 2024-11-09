@@ -5,6 +5,7 @@
 ## 🖥️ Tech Stack
 
 ![reactjs](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)&nbsp;
+![Typescript](https://img.shields.io/badge/Typescript-3178c6?style=for-the-badge&logo=Typescript&logoColor=white)&nbsp;
 ![firebase](https://img.shields.io/badge/mantine-339af0?style=for-the-badge&logo=mantine&logoColor=white)&nbsp;
 
 **Deployed On:**
