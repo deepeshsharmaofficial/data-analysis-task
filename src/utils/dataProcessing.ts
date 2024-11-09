@@ -4,9 +4,9 @@ type CropData = {
   Country: string;
   Year: string;
   "Crop Name": string;
-  "Crop Production (UOM:t(Tonnes))": string;
-  "Yield Of Crops (UOM:Kg/Ha(KilogramperHectare))": string;
-  "Area Under Cultivation (UOM:Ha(Hectares))": string;
+  "Crop Production (UOM:t(Tonnes))": string | number;
+  "Yield Of Crops (UOM:Kg/Ha(KilogramperHectare))": string | number;
+  "Area Under Cultivation (UOM:Ha(Hectares))": string | number;
 };
 
 export type YearlyStats = {
@@ -31,10 +31,13 @@ export const processData = () => {
   data.forEach((entry) => {
     const year = entry.Year;
     const crop = entry["Crop Name"];
-    const production = parseFloat(entry["Crop Production (UOM:t(Tonnes))"]) || 0;
-    const yieldPerHectare = parseFloat(entry["Yield Of Crops (UOM:Kg/Ha(KilogramperHectare))"]) || 0;
-    const area = parseFloat(entry["Area Under Cultivation (UOM:Ha(Hectares))"]) || 0;
-
+    const yieldPerHectare = typeof entry["Yield Of Crops (UOM:Kg/Ha(KilogramperHectare))"] === "string"
+      ? parseFloat(entry["Yield Of Crops (UOM:Kg/Ha(KilogramperHectare))"])
+      : entry["Yield Of Crops (UOM:Kg/Ha(KilogramperHectare))"] || 0;
+    const area = typeof entry["Area Under Cultivation (UOM:Ha(Hectares))"] === "string"
+      ? parseFloat(entry["Area Under Cultivation (UOM:Ha(Hectares))"])
+      : entry["Area Under Cultivation (UOM:Ha(Hectares))"] || 0;
+    
     // Group data by year
     if (!dataByYear[year]) {
       dataByYear[year] = [];
@@ -59,7 +62,9 @@ export const processData = () => {
     let minProduction = Infinity;
 
     crops.forEach((crop) => {
-      const production = parseFloat(crop["Crop Production (UOM:t(Tonnes))"]) || 0;
+      const production = typeof crop["Crop Production (UOM:t(Tonnes))"] === "string"
+        ? parseFloat(crop["Crop Production (UOM:t(Tonnes))"])
+        : crop["Crop Production (UOM:t(Tonnes))"] || 0;
 
       if (production > maxProduction) {
         maxProduction = production;
