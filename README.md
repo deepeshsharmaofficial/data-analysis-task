@@ -14,10 +14,13 @@
 ## 📸 Screenshots
 
 #### Table 1
+![Screenshot_12](https://github.com/user-attachments/assets/f9689b56-985b-46ec-bad1-273e3ea0ab38)
 
-#### Table 1
+#### Table 2
+![Screenshot_13](https://github.com/user-attachments/assets/58c31d65-dfee-4d61-b9e9-4a0699825e90)
 
-#### Full Screenshots
+#### Full Screenshot
+![Screenshot_14](https://github.com/user-attachments/assets/39f3f8ac-c6bd-402f-a833-fa18c5fa14fd)
 
 ## Getting started
 
